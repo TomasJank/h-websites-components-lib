@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { kebabToCamel, toTitleCase, getClasses } from "../../../utils/helpers";
+import { kebabToCamel, toTitleCase, getClasses } from "@/utils/helpers";
 import * as Icons from "@/components/icons/plain-icons";
 
 export default Vue.extend({
@@ -51,6 +51,7 @@ export default Vue.extend({
       return Icons[kebabToCamel(toTitleCase(this.icon))];
     },
     iconClass() {
+      console.log("this.$props", this.$props);
       return getClasses("icon", this.$props, "-");
     },
   },

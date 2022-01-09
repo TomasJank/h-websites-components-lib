@@ -1,6 +1,6 @@
 @use 'sass:map' as map;
 @use 'sass:color';
-@use '../../public' as *;
+@use "src/assets/scss/public" as *;
 
 $_button-colors:
   'success' color-get('success') color-get('success', dark),

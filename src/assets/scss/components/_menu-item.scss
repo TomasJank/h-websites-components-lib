@@ -1,4 +1,4 @@
-@use '../public' as *;
+@use "src/assets/scss/public" as *;
 .menu-item {
   .icon {
     @include mix-media-breakpoint-down(lg) {

@@ -1,23 +1,23 @@
-export const isBoolean = (val) => "boolean" === typeof val;
+export const isBoolean = (value): boolean => "boolean" === typeof value;
 
-export const toTitleCase = (word) =>
+export const toTitleCase = (word: string): string =>
   word.charAt(0).toUpperCase() + word.slice(1);
 
-export const kebabToCamel = (string) =>
+export const kebabToCamel = (string: string): string =>
   string.replace(/-./g, (x) => x[1].toUpperCase());
 
-export const camelToDash = (str) =>
+export const camelToDash = (str: string): string =>
   str
     .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
     .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
 
 export const getClasses = (
-  element,
-  props,
+  element: string,
+  props: { [key: string]: boolean },
   delimiter = "--",
   prepend = "",
   camelToDashKey = false
-) => {
+): string[] => {
   return Object.entries(props).map(([key, value]) => {
     if (camelToDashKey) key = camelToDash(key);
     if (!value || !isBoolean(value)) return;

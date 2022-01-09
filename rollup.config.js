@@ -7,6 +7,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import babel from "@rollup/plugin-babel";
+import scss from "rollup-plugin-scss";
 import { terser } from "rollup-plugin-terser";
 import minimist from "minimist";
 
@@ -30,6 +31,9 @@ const baseConfig = {
   input: "src/entry.ts",
   plugins: {
     preVue: [
+      scss({
+        prefix: `@import "src/assets/scss/public";`,
+      }),
       alias({
         entries: [
           {
@@ -93,6 +97,9 @@ if (!argv.format || argv.format === "es") {
       exports: "named",
     },
     plugins: [
+      scss({
+        prefix: `@import "src/assets/scss/public";`,
+      }),
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
@@ -127,6 +134,9 @@ if (!argv.format || argv.format === "cjs") {
       globals,
     },
     plugins: [
+      scss({
+        prefix: `@import "src/assets/scss/public";`,
+      }),
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue({
@@ -156,6 +166,9 @@ if (!argv.format || argv.format === "iife") {
       globals,
     },
     plugins: [
+      scss({
+        prefix: `@import "src/assets/scss/public";`,
+      }),
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),

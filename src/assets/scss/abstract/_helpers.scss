@@ -1,4 +1,4 @@
-@use '../public' as *;
+@use "src/assets/scss/public" as *;
 
 // Generates base background and text color helpers
 @include color-generate-base();

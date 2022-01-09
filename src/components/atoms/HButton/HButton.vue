@@ -98,7 +98,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@use "sass:map";
 @use "sass:color";
 @use "src/assets/scss/public" as *;
 
@@ -159,7 +158,7 @@ $_buttonWidths: map-get($var-button, width);
     &:focus {
       color: color-get(primary);
       border-color: color-get(primary);
-      /* background-color: color.adjust(color-get(primary), $alpha: -0.85); */
+      background-color: color.adjust(color-get(primary), $alpha: -0.85);
     }
     &:disabled {
       cursor: not-allowed;

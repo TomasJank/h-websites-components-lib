@@ -98,7 +98,7 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss">
-/* @use "src/assets/scss/public" as *; */
+@use "src/assets/scss/public" as *;
 
 .input-container {
   margin-top: 12px;

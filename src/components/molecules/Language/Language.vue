@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
+import Vue from "vue";
 export default Vue.extend({
   name: "language",
   props: {
@@ -24,10 +24,10 @@ export default Vue.extend({
       default: "United States",
     },
   },
-})
+});
 </script>
 <style lang="scss" scoped>
-/* @use "src/assets/scss/public" as *; */
+@use "src/assets/scss/public" as *;
 
 .country-name {
   font-weight: 700;

@@ -1,5 +1,5 @@
 @use "sass:map" as map;
-@use '../public' as *;
+@use "src/assets/scss/public" as *;
 
 .container {
     padding: 0 16px;
