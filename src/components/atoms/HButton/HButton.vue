@@ -5,7 +5,7 @@
     :to="to"
     :href="href"
     :target="target"
-    :class="getButtonClass"
+    :class="`klase`"
     @click.native="buttonClick"
     @mousedown.native="buttonMouseDown"
     @mouseover.native="buttonMouseOver"
