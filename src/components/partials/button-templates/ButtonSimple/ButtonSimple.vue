@@ -1,6 +1,6 @@
 <template>
 	<button>
-		<slot />
+		<slot />nu dw ne
 	</button>
 </template>
 
