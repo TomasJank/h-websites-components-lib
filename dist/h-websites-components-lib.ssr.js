@@ -138,7 +138,9 @@ var __vue_render__$F = function __vue_render__() {
 
   var _c = _vm._self._c || _h;
 
-  return _c('button', [_vm._t("default"), _vm._ssrNode("nu dw ne\n")], 2);
+  return _c('button', {
+    staticClass: "red"
+  }, [_vm._t("default")], 2);
 };
 
 var __vue_staticRenderFns__$F = [];
@@ -150,7 +152,7 @@ var __vue_inject_styles__$F = undefined;
 var __vue_scope_id__$F = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$F = "data-v-160ea44a";
+var __vue_module_identifier__$F = "data-v-1dc8b54d";
 /* functional template */
 
 var __vue_is_functional_template__$F = false;

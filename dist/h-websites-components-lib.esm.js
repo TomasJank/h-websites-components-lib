@@ -144,7 +144,9 @@ var __vue_render__$F = function __vue_render__() {
 
   var _c = _vm._self._c || _h;
 
-  return _c('button', [_vm._t("default"), _vm._v("nu dw ne\n")], 2);
+  return _c('button', {
+    staticClass: "red"
+  }, [_vm._t("default")], 2);
 };
 
 var __vue_staticRenderFns__$F = [];

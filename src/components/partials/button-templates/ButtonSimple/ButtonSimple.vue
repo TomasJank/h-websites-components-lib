@@ -1,6 +1,6 @@
 <template>
-	<button>
-		<slot />nu dw ne
+	<button class="red">
+		<slot />
 	</button>
 </template>
 
