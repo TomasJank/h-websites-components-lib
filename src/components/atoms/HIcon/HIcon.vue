@@ -22,6 +22,7 @@ import { kebabToCamel, toTitleCase, getClasses } from "@/utils/helpers";
 import * as Icons from "@/components/icons/plain-icons";
 
 export default Vue.extend({
+  name: "HIcon",
   props: {
     title: String,
     iconName: String,

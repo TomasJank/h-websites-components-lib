@@ -20,7 +20,6 @@ export default Vue.extend({
   },
   methods: {
     hide() {
-      debugger;
       this.$emit("update:show", false);
     },
   },
