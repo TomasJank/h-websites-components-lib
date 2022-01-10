@@ -52,7 +52,6 @@ export default Vue.extend({
       return Icons[kebabToCamel(toTitleCase(this.icon))];
     },
     iconClass() {
-      console.log("this.$props", this.$props);
       return getClasses("icon", this.$props, "-");
     },
   },
@@ -60,15 +59,13 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@use "src/assets/scss/theme/variables" as *;
-@use "src/assets/scss/theme/themes" as *;
-
+/* @import "src/styles/scss/public/colors"; */
 .h-icon {
   width: 24px;
   height: 24px;
 }
 
-@each $color, $value in $theme-colors {
+@each $color, $value in $colors {
   .icon-#{$color} {
     fill: themed("#{$color}") !important;
   }

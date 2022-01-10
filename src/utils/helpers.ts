@@ -1,4 +1,6 @@
 export const isBoolean = (value): boolean => "boolean" === typeof value;
+export const isObject = (value): boolean => "object" === typeof value;
+
 
 export const toTitleCase = (word: string): string =>
   word.charAt(0).toUpperCase() + word.slice(1);

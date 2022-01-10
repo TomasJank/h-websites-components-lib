@@ -1,6 +1,0 @@
-
-@import './general-theme-colors.scss';
-
-@function themed($key) {
-  @return map-get($generalThemeColors, $key);
-}

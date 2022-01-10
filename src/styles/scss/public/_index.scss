@@ -1,0 +1,6 @@
+@forward 'colors' as color-*;
+@forward 'variables' as var-*;
+@forward 'functions' as f-*;
+@forward 'mixins' as mix-*;
+
+@import "colors";

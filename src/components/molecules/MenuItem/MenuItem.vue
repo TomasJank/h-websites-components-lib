@@ -25,7 +25,6 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
-@use "src/assets/scss/public" as *;
 .menu-item {
   .icon {
     @include mix-media-breakpoint-down(lg) {

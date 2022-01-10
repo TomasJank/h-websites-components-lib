@@ -10,7 +10,6 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
-@use "sass:list" as list;
 
 $_language-codes: (
   "com-ar",

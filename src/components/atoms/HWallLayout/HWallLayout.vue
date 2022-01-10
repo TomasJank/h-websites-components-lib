@@ -23,22 +23,21 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss">
-@use "src/assets/scss/public" as *;
 .masonry-layout {
   column-count: 2;
   grid-auto-flow: row dense;
   grid-gap: 10px;
-  @include mix-media-breakpoint-up(lg) {
+  /* @include mix-media-breakpoint-up(lg) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+  } */
 
   & > * {
     height: -webkit-fill-available;
     display: inline-block;
     margin-bottom: 10px;
 
-    @include mix-media-breakpoint-up(lg) {
+    /* @include mix-media-breakpoint-up(lg) {
       height: auto;
       &.tile-2x2 {
         grid-column: span 2;
@@ -49,7 +48,7 @@ export default Vue.extend({
         grid-column: span 1;
         grid-row: span 2;
       }
-    }
+    } */
   }
 }
 </style>

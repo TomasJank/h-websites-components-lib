@@ -20,42 +20,21 @@
 
 <script lang="ts">
 import Vue from "vue";
-import ButtonSimple from "@/components/partials/button-templates/ButtonSimple";
-import ButtonRouterLink from "@/components/partials/button-templates/ButtonRouterLink";
-import ButtonLink from "@/components/partials/button-templates/ButtonLink";
+import HButtonSimple from "@/components/partials/button-templates/HButtonSimple";
+import HButtonRouterLink from "@/components/partials/button-templates/HButtonRouterLink";
+import HButtonLink from "@/components/partials/button-templates/HButtonLink";
+import { HButtonProps } from "@/types/props/component-props";
 
 export default Vue.extend({
-  components: { ButtonSimple, ButtonRouterLink, ButtonLink },
-  props: {
-    to: [Object, String],
-    href: String,
-    target: String,
-    id: String,
-    primary: Boolean,
-    success: Boolean,
-    danger: Boolean,
-    dark: Boolean,
-    white: Boolean,
-    bordered: Boolean,
-    transparent: Boolean,
-    lg: Boolean,
-    md: Boolean,
-    sm: Boolean,
-    inline: Boolean,
-    inlineDanger: Boolean,
-    inlineDark: Boolean,
-    inlineWhite: Boolean,
-    dropdown: Boolean,
-    isOpen: Boolean,
-    link: Boolean,
-  },
+  components: { HButtonSimple, HButtonRouterLink, HButtonLink },
+  props: { to: [Object, String], ...HButtonProps },
   computed: {
     getButtonType() {
       return this.to
-        ? "button-router-link"
+        ? "h-button-router-link"
         : this.href
-        ? "button-link"
-        : "button-simple";
+        ? "h-button-link"
+        : "h-button-simple";
     },
     getButtonClass() {
       return {
@@ -98,14 +77,11 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@use "sass:color";
-@use "src/assets/scss/public" as *;
-
 $_button-colors: "success" color-get("success") color-get("success", dark),
   "danger" color-get("danger") color-get("danger", dark),
   "dark" color-get("dark") color-get("primary"),
   "white" color-get("white") color-get("danger"), "transparent" transparent;
-$_buttonWidths: map-get($var-button, width);
+/* $_buttonWidths: map-get($var-button, width); */
 
 @mixin generate-button-colors() {
   @each $base, $baseHex, $activeHex in $_button-colors {
@@ -158,7 +134,7 @@ $_buttonWidths: map-get($var-button, width);
     &:focus {
       color: color-get(primary);
       border-color: color-get(primary);
-      background-color: color.adjust(color-get(primary), $alpha: -0.85);
+      /* background-color: color.adjust(color-get(primary), $alpha: -0.85); */
     }
     &:disabled {
       cursor: not-allowed;
@@ -280,12 +256,10 @@ $_buttonWidths: map-get($var-button, width);
 @each $name, $widths in $_buttonWidths {
   .hb--#{$name} {
     @each $breakPoint, $width in $widths {
-      @include mix-media-breakpoint-up($breakPoint) {
+      /* @include mix-media-breakpoint-up($breakPoint) {
         max-width: #{$width} !important;
-      }
+      } */
     }
   }
 }
-
-/* @import '@/assets/scss/components/atoms/_button.scss'; */
 </style>

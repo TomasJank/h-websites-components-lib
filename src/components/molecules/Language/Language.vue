@@ -27,7 +27,6 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss" scoped>
-@use "src/assets/scss/public" as *;
 
 .country-name {
   font-weight: 700;

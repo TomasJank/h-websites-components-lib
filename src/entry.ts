@@ -1,6 +1,6 @@
 // iife/cjs usage extends esm default export - so import it all
 import plugin, * as components from '@/entry.esm';
-import "./components/directives";
+import "./directives";
 
 
 // Attach named exports directly to plugin. IIFE/CJS will

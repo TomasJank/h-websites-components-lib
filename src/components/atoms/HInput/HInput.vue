@@ -1,12 +1,42 @@
 <template>
-  <div>
-    <HText>labas</HText>
-    <HIcon
-      icon="ic-question"
-      class="cursor-pointer"
-      success
-      viewBox="-2 3 20 20"
+  <div class="input-container position-relative" :class="{ disabled }">
+    <HLabel class="label" :for="id">{{ label }} </HLabel>
+    <div
+      v-click-outside="hideText"
+      class="icon-holder position-absolute d-flex"
+    >
+      <HIcon v-if="help" icon="ic-question" />
+
+      <HIcon v-else-if="error" icon="ic-exclamation" danger />
+      <!-- This icon need refactoring -->
+      <IconEye
+        v-else-if="password"
+        class="cursor-pointer"
+        :crossed="!show"
+        :disabled="disabled"
+        @click.native="show = !show"
+      />
+      <HIcon
+        v-else-if="dropdown"
+        icon="ic-chevron"
+        :primary="!disabled"
+        :disabled="disabled"
+      />
+    </div>
+
+    <component
+      :is="getInputType"
+      class="input"
+      :disabled="disabled"
+      :show.sync="show"
+      :password="password"
+      :class="getInputClass"
+      :placeholder="placeholder"
+      :options="items"
     />
+    <HText v-if="error" tag="div" danger class="pl-16 position-absolute">{{
+      error
+    }}</HText>
   </div>
 </template>
 
@@ -16,12 +46,12 @@ import MultilineField from "@/components/partials/input-templates/MultilineField
 import Dropdown from "@/components/partials/input-templates/Dropdown";
 import InputField from "@/components/partials/input-templates/InputField";
 import HIcon from "@/components/atoms/HIcon";
+import HLabel from "@/components/atoms/HLabel";
 import HText from "@/components/atoms/HText";
 
-console.log("test", HIcon);
 export default Vue.extend({
   name: "HInput",
-  components: { HIcon, HText },
+  components: { MultilineField, Dropdown, InputField, HIcon, HLabel, HText },
   props: {
     id: String,
     placeholder: String,
@@ -60,7 +90,6 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss">
-@use "src/assets/scss/public" as *;
 
 .input-container {
   margin-top: 12px;
