@@ -6,20 +6,14 @@
   "browser": "dist/h-websites-components-lib.esm.js",
   "module": "dist/h-websites-components-lib.esm.js",
   "unpkg": "dist/h-websites-components-lib.min.js",
-  "exports": {
-    ".": {
-      "import": "./dist/h-vue-components.es.js",
-      "require": "./dist/h-vue-components.umd.js"
-    },
-    "./*": "./dist/*"
-  },
   "files": [
-    "dist"
+    "dist/*",
+    "src/**/*.vue"
   ],
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "prebuild": "rimraf ./dist",
-    "build": "vite build && sass src/styles/scss/main.scss dist/index.css",
+    "build": "cross-env NODE_ENV=production rollup --config rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config rollup.config.js --format iife",
@@ -57,28 +51,21 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^1.0.3",
-    "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
     "minimist": "^1.2.5",
-    "postcss": "^8.4.5",
-    "postcss-import": "^14.0.2",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.52.8",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^5.1.9",
     "sass": "^1.36.0",
     "sass-loader": "^10.1.1",
     "typescript": "~4.1.5",
     "vite": "^2.7.10",
-    "vite-plugin-vue2": "^1.9.2",
     "vue": "^2.6.14",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.11"

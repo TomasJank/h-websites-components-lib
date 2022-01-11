@@ -44,15 +44,19 @@ const baseConfig = {
     },
 
     vue: {
-      css: true,
-      template: {
-        isProduction: true,
+      style: {
+        preprocessOptions: {
+          scss: {
+            includePaths: ["src/styles/scss"],
+          },
+        },
       },
     },
     postVue: [
       resolve({
         extensions: [".js", ".jsx", ".ts", ".tsx", ".vue"],
       }),
+      resolve(),
       commonjs(),
     ],
     babel: {
@@ -81,6 +85,7 @@ const globals = {
 
 // Customize configs for individual targets
 const buildFormats = [];
+
 if (!argv.format || argv.format === "es") {
   const esConfig = {
     ...baseConfig,
@@ -170,5 +175,4 @@ if (!argv.format || argv.format === "iife") {
   buildFormats.push(unpkgConfig);
 }
 
-// Export config
 export default buildFormats;
