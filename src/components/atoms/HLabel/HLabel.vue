@@ -22,13 +22,9 @@ export default Vue.extend({
   computed: {
     classes() {
       return {
-        "label--top": this.top,
-        "label--md": this.md,
-        "label--lg": this.lg,
         "label-success": this.success,
         "label-primary": this.primary,
         "label-secondary": this.secondary,
-        "label-info": this.info,
         "label-warning": this.warning,
         "label-danger": this.danger,
         "label-light": this.light,

@@ -6,14 +6,20 @@
   "browser": "dist/h-websites-components-lib.esm.js",
   "module": "dist/h-websites-components-lib.esm.js",
   "unpkg": "dist/h-websites-components-lib.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/h-vue-components.es.js",
+      "require": "./dist/h-vue-components.umd.js"
+    },
+    "./*": "./dist/*"
+  },
   "files": [
-    "dist/*",
-    "src/**/*.vue"
+    "dist"
   ],
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "prebuild": "rimraf ./dist",
-    "build": "cross-env NODE_ENV=production rollup --config rollup.config.js",
+    "build": "vite build && sass src/styles/scss/main.scss dist/index.css",
     "build:ssr": "cross-env NODE_ENV=production rollup --config rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config rollup.config.js --format iife",
@@ -22,6 +28,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "rollup-plugin-styles": "^3.14.1",
     "v-click-outside": "^3.1.2",
     "vue": "^2.6.11"
   },
@@ -40,7 +47,7 @@
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
-    "@vitejs/plugin-vue": "^1.2.2",
+    "@vitejs/plugin-vue": "^1.10.2",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
@@ -62,6 +69,7 @@
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.52.8",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
@@ -69,7 +77,7 @@
     "sass": "^1.36.0",
     "sass-loader": "^10.1.1",
     "typescript": "~4.1.5",
-    "vite": "^2.3.4",
+    "vite": "^2.7.10",
     "vite-plugin-vue2": "^1.9.2",
     "vue": "^2.6.14",
     "vue-loader": "^15.9.8",
