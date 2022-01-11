@@ -1,6 +1,6 @@
 import * as components from "@/components";
-
-const install = (Vue, options = { prefix: String }) => {
+import { VueConstructor } from "vue";
+const install = (Vue: VueConstructor, options = { prefix: String }) => {
   for (let key in components) {
     let _key = options.prefix ? options.prefix + key : key;
     Vue.component(_key, components[key]);

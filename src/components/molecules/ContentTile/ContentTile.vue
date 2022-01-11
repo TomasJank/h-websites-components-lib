@@ -27,9 +27,9 @@ export default Vue.extend({
   components: { HText, HIcon },
   computed: {
     getClass() {
-      const contentSlot = this.$slots.content;
+      const contentSlot = this.$slots.content || [];
       const slotText = contentSlot[0].text;
-      return slotText.length <= 300 ? "tile-1x2" : "tile-2x2";
+      if (slotText) return slotText.length <= 300 ? "tile-1x2" : "tile-2x2";
     },
   },
 });
@@ -41,7 +41,7 @@ export default Vue.extend({
 .tile {
   text-align: center;
   padding: 48px 16px;
-  border: 1px solid themed("gray-border");
+  border: 1px solid get-color("gray-border");
   box-shadow: 0 0 32px 0 #16213e17;
   border-radius: 6px;
 }

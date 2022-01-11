@@ -1,5 +1,6 @@
 <template>
   <button :disabled="disabled" @click.prevent="$emit('click')">
+    works
     <slot />
   </button>
 </template>

@@ -118,29 +118,29 @@ export default Vue.extend({
     padding: 12px 16px;
     height: 48px;
     border-radius: 4px;
-    border: 1px solid color-get("gray", border);
+    border: 1px solid get-color("gray-border");
     width: 100%;
     box-sizing: border-box;
     font-size: 16px;
 
     &__error {
-      box-shadow: 0px 0px 4px 0px color-get("danger", dark);
+      box-shadow: 0px 0px 4px 0px get-color("danger-dark");
     }
 
     &__error {
-      border: 1px solid color-get("danger", dark);
+      border: 1px solid get-color("danger-dark");
     }
 
     &__disabled {
-      border: 1px solid color-get("gray", border);
+      border: 1px solid get-color("gray-border");
       box-shadow: none;
-      color: color-get("gray", border);
-      background-color: color-get("white") !important;
+      color: get-color("gray-border");
+      background-color: get-color("white") !important;
     }
 
     &:focus:not([disabled]):not(.input__disabled) {
-      border: 1px solid color-get("primary");
-      box-shadow: 0px 0px 4px 0px color-get("primary");
+      border: 1px solid get-color("primary");
+      box-shadow: 0px 0px 4px 0px get-color("primary");
     }
 
     &.custom-select {
@@ -153,18 +153,18 @@ export default Vue.extend({
         top: 0;
         left: 0;
         right: 0;
-        background: color-get("white");
-        color: color-get("dark");
+        background: get-color("white");
+        color: get-color("dark");
         border-radius: 4px;
         overflow: hidden;
         box-shadow: 0px 0px 8px 0px #00000033;
 
         .item {
           padding: 12px 16px;
-          color: color-get("dark");
+          color: get-color("dark");
 
           &:hover {
-            background: color-get("white", blue);
+            background: get-color("white");
           }
         }
       }
@@ -179,17 +179,17 @@ export default Vue.extend({
   &.disabled {
     .label,
     .input {
-      color: color-get("gray", border);
+      color: get-color("gray-border");
     }
   }
 
   &:hover:not(.disabled) {
     .label {
-      color: color-get("primary");
+      color: get-color("primary");
     }
     .input:not([disabled]) {
-      border: 1px solid color-get("primary");
-      box-shadow: 0px 0px 4px 0px color-get("primary");
+      border: 1px solid get-color("primary");
+      box-shadow: 0px 0px 4px 0px get-color("primary");
     }
   }
 }

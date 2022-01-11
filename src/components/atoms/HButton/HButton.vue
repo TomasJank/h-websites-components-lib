@@ -27,7 +27,30 @@ import { HButtonProps } from "@/types/props/component-props";
 
 export default Vue.extend({
   components: { HButtonSimple, HButtonRouterLink, HButtonLink },
-  props: { to: [Object, String], ...HButtonProps },
+  props: {
+    to: [Object, String],
+    href: String,
+    target: String,
+    id: String,
+    primary: Boolean,
+    success: Boolean,
+    danger: Boolean,
+    dark: Boolean,
+    white: Boolean,
+    bordered: Boolean,
+    transparent: Boolean,
+    lg: Boolean,
+    md: Boolean,
+    sm: Boolean,
+    inline: Boolean,
+    inlineDanger: Boolean,
+    inlineDark: Boolean,
+    inlineWhite: Boolean,
+    dropdown: Boolean,
+    isOpen: Boolean,
+    link: Boolean,
+  },
+
   computed: {
     getButtonType() {
       return this.to
@@ -77,10 +100,10 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-$_button-colors: "success" color-get("success") color-get("success", dark),
-  "danger" color-get("danger") color-get("danger", dark),
-  "dark" color-get("dark") color-get("primary"),
-  "white" color-get("white") color-get("danger"), "transparent" transparent;
+$_button-colors: "success" get-color("success") get-color("success-dark"),
+  "danger" get-color("danger") get-color("danger-dark"),
+  "dark" get-color("dark") get-color("primary"),
+  "white" get-color("white") get-color("danger"), "transparent" transparent;
 /* $_buttonWidths: map-get($var-button, width); */
 
 @mixin generate-button-colors() {
@@ -106,98 +129,98 @@ $_button-colors: "success" color-get("success") color-get("success", dark),
 }
 
 .hb {
-  color: color-get("white");
+  color: get-color("white");
   width: 100%;
   min-height: 48px;
-  background-color: color-get(primary);
+  background-color: get-color("primary");
   @extend .button-default-props;
   &:hover,
   &:active,
   &:focus {
-    background-color: color-get(primary, dark);
-    color: color-get("white");
+    background-color: get-color("primary-dark");
+    color: get-color("white");
   }
   &:disabled {
     cursor: not-allowed;
-    color: color-get("white");
-    background-color: color-get("gray");
+    color: get-color("white");
+    background-color: get-color("gray");
   }
   &:not(.hb--bordered):not(.hb--transparent):not(.hb-inline):not(.hb-inline--danger) {
     box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.16);
   }
   &--bordered {
-    color: color-get(primary);
+    color: get-color("primary");
     background: transparent;
-    border: 2px solid color-get(primary);
+    border: 2px solid get-color("primary");
     &:hover,
     &:active,
     &:focus {
-      color: color-get(primary);
-      border-color: color-get(primary);
-      /* background-color: color.adjust(color-get(primary), $alpha: -0.85); */
+      color: get-color("primary");
+      border-color: get-color("primary");
+      /* background-color: color.adjust(get-color(primary), $alpha: -0.85); */
     }
     &:disabled {
       cursor: not-allowed;
-      color: color-get("gray");
-      border-color: color-get("gray");
-      background: color-get("white");
+      color: get-color("gray");
+      border-color: get-color("gray");
+      background: get-color("white");
     }
   }
   &--transparent {
-    color: color-get(primary);
+    color: get-color(primary);
     background: transparent;
     border: 2px solid transparent;
     &:hover,
     &:active,
     &:focus {
-      color: color-get(primary);
-      /* background-color: color.adjust(color-get(primary), $alpha: -0.85); */
+      color: get-color("primary");
+      /* background-color: color.adjust(get-color(primary), $alpha: -0.85); */
     }
     &:disabled {
       cursor: not-allowed;
-      color: color-get("gray");
-      border-color: color-get("gray");
-      background: color-get("white");
+      color: get-color("gray");
+      border-color: get-color("gray");
+      background: get-color("white");
     }
   }
 }
 
 .hb-inline {
   @extend .button-default-props;
-  color: color-get(primary);
+  color: get-color(primary);
   font-weight: 700;
   background: transparent;
   padding: 0;
   &:hover,
   &:active,
   &:focus {
-    color: color-get(primary, dark);
+    color: get-color("primary-dark");
     background: transparent;
     outline: none;
     box-shadow: none;
   }
   &--white {
-    color: color-get("white");
+    color: get-color("white");
     &:hover,
     &:active,
     &:focus {
-      color: color-get(danger);
+      color: get-color("danger");
     }
   }
   &--danger {
-    color: color-get(danger);
+    color: get-color("danger");
     &:hover,
     &:active,
     &:focus {
-      color: color-get(danger, dark);
+      color: get-color("dangerDark");
     }
   }
   &--dark {
-    color: color-get(dark);
+    color: get-color("dark");
     &:hover,
     &:active,
     &:focus {
-      color: color-get(primary);
+      color: get-color("primary");
     }
   }
 }
@@ -206,12 +229,12 @@ $_button-colors: "success" color-get("success") color-get("success", dark),
   line-height: 140%;
   text-decoration: underline;
   text-underline-offset: 1px;
-  color: color-get("meteorite", "dark");
+  color: get-color("meteorite-dark");
   transition: all ease-in-out 0.3s;
   &:hover,
   &:focus,
   &:active {
-    color: color-get("primary");
+    color: get-color("primary");
   }
 }
 .hb-icon {
@@ -253,5 +276,4 @@ $_button-colors: "success" color-get("success") color-get("success", dark),
     }
   }
 }
-
 </style>

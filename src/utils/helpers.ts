@@ -1,6 +1,6 @@
-export const isBoolean = (value): boolean => "boolean" === typeof value;
+export const isBoolean = (value: any): boolean => "boolean" === typeof value;
 
-export const isObject = (value): boolean => "object" === typeof value;
+export const isObject = (value: any): boolean => "object" === typeof value;
 
 export const toTitleCase = (word: string): string =>
   word.charAt(0).toUpperCase() + word.slice(1);
@@ -19,11 +19,9 @@ export const getClasses = (
   delimiter = "--",
   prepend = "",
   camelToDashKey = false
-): string[] => {
-  return Object.entries(props).map(([key, value]) => {
+): string[] =>
+  Object.entries(props).map(([key, value]) => {
     if (camelToDashKey) key = camelToDash(key);
-    if (!value || !isBoolean(value)) return;
+    if (!value || !isBoolean(value)) return "";
     return `${element}${delimiter}${prepend ? prepend : ""}${camelToDash(key)}`;
   });
-};
-

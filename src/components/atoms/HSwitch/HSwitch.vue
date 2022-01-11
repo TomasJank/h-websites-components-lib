@@ -85,12 +85,12 @@ export default Vue.extend({
   .switch-inner:before {
     content: "";
     padding-left: 10px;
-    background-color: color-get("success");
+    background-color: get-color("success");
   }
   .switch-inner:after {
     content: "";
     padding-right: 10px;
-    background-color: color-get("gray");
+    background-color: get-color("gray");
   }
   .switch-outer {
     display: block;
@@ -98,7 +98,7 @@ export default Vue.extend({
     height: 14px;
     margin-top: -2px;
     margin-right: -4px;
-    background-color: color-get("white");
+    background-color: get-color("white");
     position: absolute;
     top: 0;
     bottom: 0;
@@ -128,10 +128,10 @@ export default Vue.extend({
 
   &__disabled {
     .switch-inner:before {
-      background: color-get("success", "light");
+      background: get-color("success-light");
     }
     .switch-inner:after {
-      background: color-get("gray", "border");
+      background: get-color("gray-border");
     }
   }
 

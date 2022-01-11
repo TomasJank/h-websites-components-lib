@@ -32,13 +32,13 @@ export default Vue.extend({
   font-weight: 700;
   font-size: 14px;
   line-height: 24px;
-  color: color-get("meteorite", "dark");
+  color: get-color("meteorite-dark");
 }
 
 .language-name {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
-  color: color-get("gray", "manatee");
+  color: get-color("gray");
 }
 </style>

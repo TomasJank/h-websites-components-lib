@@ -15,7 +15,7 @@
     <div v-if="open" class="items position-absolute" @blur="open = false">
       <div
         v-for="option of options"
-        :key="option.value" 
+        :key="option.value"
         class="item cursor-pointer z-index-1"
         @click="selectOption(option)"
         @blur="open = false"
@@ -57,7 +57,7 @@ export default Vue.extend({
         this.open = !this.open;
       }
     },
-    selectOption(option) {
+    selectOption(option: { value: string }) {
       this.selected = option;
       this.open = false;
       this.$emit("input", option.value);

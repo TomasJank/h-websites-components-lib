@@ -59,7 +59,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "src/styles/scss/public/colors"; // should get rid of this
+@import "src/styles/scss/abstracts/colors"; REMOVE THIS
 .h-icon {
   width: 24px;
   height: 24px;
@@ -67,7 +67,7 @@ export default Vue.extend({
 
 @each $color, $value in $colors {
   .icon-#{$color} {
-    fill: themed("#{$color}") !important;
+    fill: get-color('#{$color}') !important;
   }
 }
 </style>
