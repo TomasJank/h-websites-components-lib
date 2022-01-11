@@ -1,6 +1,5 @@
 // Import vue components
 import * as components from "@/components";
-import { VueConstructor } from "vue";
 // install function executed by Vue.use()
 const install = function installWouldThisWork(Vue) {
   Object.entries(components).forEach(([componentName, component]) => {
