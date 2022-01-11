@@ -59,7 +59,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "main";
+@use "main" as *;
 .h-icon {
   width: 24px;
   height: 24px;

@@ -100,8 +100,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@use "sass:map";
-@use "sass:color";
 @use "main" as *;
 
 $_button-colors: "success" get-color("success") get-color("success-dark"),
