@@ -59,7 +59,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-/* @import "src/styles/scss/public/colors"; */
+@import "src/styles/scss/public/colors"; // should get rid of this
 .h-icon {
   width: 24px;
   height: 24px;

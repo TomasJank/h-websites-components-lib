@@ -253,13 +253,5 @@ $_button-colors: "success" color-get("success") color-get("success", dark),
     }
   }
 }
-@each $name, $widths in $_buttonWidths {
-  .hb--#{$name} {
-    @each $breakPoint, $width in $widths {
-      /* @include mix-media-breakpoint-up($breakPoint) {
-        max-width: #{$width} !important;
-      } */
-    }
-  }
-}
+
 </style>

@@ -27,22 +27,15 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .menu-item {
   .icon {
-    @include mix-media-breakpoint-down(lg) {
-      display: none;
-    }
+
   }
   .text {
     align-items: flex-start;
-    .title {
+    /* .title {
       @include mix-font-props(18px, 24px);
-    }
+    } */
 
-    .description {
-      @include mix-font-props(14px, 24px);
-      @include mix-media-breakpoint-down(lg) {
-        color: color-get("gray");
-      }
-    }
+  
   }
 }
 </style>
