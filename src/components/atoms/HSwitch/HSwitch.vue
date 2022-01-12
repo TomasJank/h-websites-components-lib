@@ -22,7 +22,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import HLabel from "@/components/atoms/HLabel";
+
 export default Vue.extend({
+  name: "HSwitch",
+  components: { HLabel },
   props: {
     id: {
       type: String,
@@ -52,7 +56,6 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss" scoped>
-
 .switch {
   position: relative;
   height: fit-content;

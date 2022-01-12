@@ -20,6 +20,7 @@
 import Vue from "vue";
 import { kebabToCamel, toTitleCase, getClasses } from "@/utils/helpers";
 import * as Icons from "@/components/icons/plain-icons";
+import { MainColors, DarkColors } from "@/types/props/global-props";
 
 export default Vue.extend({
   name: "HIcon",
@@ -34,16 +35,8 @@ export default Vue.extend({
       type: [Number, String],
       default: "0 0 24 24",
     },
-    danger: Boolean,
-    gray: Boolean,
-    success: Boolean,
-    info: Boolean,
-    warning: Boolean,
-    warningDark: Boolean,
-    dark: Boolean,
-    light: Boolean,
-    primary: Boolean,
-    headerBg: Boolean,
+    ...MainColors,
+    ...DarkColors,
     customClass: String,
     disabled: Boolean,
   },
@@ -59,7 +52,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@use "main" as *;
+@use "src/styles/scss/abstracts" as *;
 .h-icon {
   width: 24px;
   height: 24px;
@@ -67,7 +60,7 @@ export default Vue.extend({
 
 @each $color, $value in $colors {
   .icon-#{$color} {
-    fill: get-color('#{$color}') !important;
+    fill: get-color("#{$color}") !important;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <HText tag="span" meteorite-dark class="d-flex mb-24">
-    <IconFlag :country-code="countryCode" class="mt-auto mb-auto" />
+    <!-- <IconFlag :country-code="countryCode" class="mt-auto mb-auto" /> -->
     <HText tag="p" class="pl-8 country-name">{{ countryName }}</HText>
     <HText tag="p" class="pl-8 language-name">{{ lang }}</HText>
   </HText>
@@ -8,8 +8,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import HText from "@/components/atoms/HText";
+
 export default Vue.extend({
-  name: "language",
+  name: "Language",
+  components: { HText },
   props: {
     countryCode: {
       type: String,
@@ -27,7 +30,6 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss" scoped>
-
 .country-name {
   font-weight: 700;
   font-size: 14px;

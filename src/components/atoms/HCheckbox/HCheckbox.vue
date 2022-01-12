@@ -5,7 +5,7 @@
       class="d-flex flex-row cursor-pointer align-items-center"
       @click.native="updateStatus()"
     >
-      <IconCheckbox :checked="checked" :partly-checked="partlyChecked" />
+      <!-- <IconCheckbox :checked="checked" :partly-checked="partlyChecked" /> -->
       {{ label }}
     </HLabel>
   </div>
@@ -13,7 +13,10 @@
 
 <script lang="ts">
 import Vue from "vue";
+import HLabel from "@/components/atoms/HLabel/HLabel";
 export default Vue.extend({
+  name: "HCheckbox",
+  components: { HLabel },
   props: {
     checked: Boolean,
     partlyChecked: Boolean,

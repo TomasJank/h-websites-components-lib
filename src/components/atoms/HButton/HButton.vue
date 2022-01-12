@@ -20,35 +20,17 @@
 
 <script lang="ts">
 import Vue from "vue";
-import HButtonSimple from "@/components/partials/button-templates/HButtonSimple";
-import HButtonRouterLink from "@/components/partials/button-templates/HButtonRouterLink";
-import HButtonLink from "@/components/partials/button-templates/HButtonLink";
+import HButtonSimple from '@/components/atoms/HButton/HButtonSimple.vue'
+import HButtonLink from '@/components/atoms/HButton/HButtonLink.vue'
+import HButtonRouterLink from '@/components/atoms/HButton/HButtonRouterLink.vue'
+
 import { HButtonProps } from "@/types/props/component-props";
 
 export default Vue.extend({
   components: { HButtonSimple, HButtonRouterLink, HButtonLink },
   props: {
     to: [Object, String],
-    href: String,
-    target: String,
-    id: String,
-    primary: Boolean,
-    success: Boolean,
-    danger: Boolean,
-    dark: Boolean,
-    white: Boolean,
-    bordered: Boolean,
-    transparent: Boolean,
-    lg: Boolean,
-    md: Boolean,
-    sm: Boolean,
-    inline: Boolean,
-    inlineDanger: Boolean,
-    inlineDark: Boolean,
-    inlineWhite: Boolean,
-    dropdown: Boolean,
-    isOpen: Boolean,
-    link: Boolean,
+    ...HButtonProps,
   },
 
   computed: {
@@ -100,7 +82,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@use "main" as *;
+@use "src/styles/scss/main" as *;
 
 $_button-colors: "success" get-color("success") get-color("success-dark"),
   "danger" get-color("danger") get-color("danger-dark"),

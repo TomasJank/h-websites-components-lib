@@ -30,6 +30,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
+  name:'Dropdown',
   props: {
     id: { type: String },
     disabled: Boolean,

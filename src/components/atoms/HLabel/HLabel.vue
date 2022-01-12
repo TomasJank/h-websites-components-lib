@@ -8,6 +8,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
+  name: "HLabel",
   props: {
     top: Boolean,
     gray: Boolean,

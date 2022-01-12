@@ -6,9 +6,10 @@
     @blur="hide"
   />
 </template>
-<script lang='ts'>
-  import Vue from 'vue'
+<script lang="ts">
+import Vue from "vue";
 export default Vue.extend({
+  name:"InputField",
   props: {
     placeholder: String,
     label: String,
@@ -23,5 +24,5 @@ export default Vue.extend({
       this.$emit("update:show", false);
     },
   },
-})
+});
 </script>

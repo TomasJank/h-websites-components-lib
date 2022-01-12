@@ -42,9 +42,9 @@
 
 <script lang="ts">
 import Vue from "vue";
-import MultilineField from "@/components/partials/input-templates/MultilineField";
-import Dropdown from "@/components/partials/input-templates/Dropdown";
-import InputField from "@/components/partials/input-templates/InputField";
+import MultilineField from "@/components/atoms/HInput/MultilineField.vue";
+import Dropdown from "@/components/atoms/HInput/Dropdown.vue";
+import InputField from "@/components/atoms/HInput/InputField.vue";
 import HIcon from "@/components/atoms/HIcon";
 import HLabel from "@/components/atoms/HLabel";
 import HText from "@/components/atoms/HText";

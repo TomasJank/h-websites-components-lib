@@ -8,6 +8,8 @@ export const MainColors = {
   dark: Boolean as PropType<boolean>,
   light: Boolean as PropType<boolean>,
   gray: Boolean as PropType<boolean>,
+  white: Boolean as PropType<boolean>,
+
 };
 
 export const DarkColors = {

@@ -9,6 +9,7 @@ import Vue from "vue";
 const _tagTypes = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "span"];
 
 export default Vue.extend({
+  name: "HText",
   props: {
     tag: {
       type: String,
